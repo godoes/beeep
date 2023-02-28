@@ -1,5 +1,4 @@
 //go:build windows && !linux && !freebsd && !netbsd && !openbsd && !darwin && !js
-// +build windows,!linux,!freebsd,!netbsd,!openbsd,!darwin,!js
 
 package beeep
 
@@ -12,8 +11,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/go-toast/toast"
-	"github.com/tadvi/systray"
+	"github.com/godoes/systray"
+	"github.com/godoes/toast"
 	"golang.org/x/sys/windows/registry"
 )
 
