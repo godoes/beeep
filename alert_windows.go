@@ -4,7 +4,7 @@
 package beeep
 
 import (
-	toast "github.com/go-toast/toast"
+	"github.com/godoes/toast"
 )
 
 // Alert displays a desktop notification and plays a default system sound.

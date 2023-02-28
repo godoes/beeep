@@ -9,9 +9,9 @@ echo 1. 更新三方依赖...
 cd
 ::& go get -d -u & echo.
 
-go get github.com/go-toast/toast@latest
 go get github.com/godbus/dbus/v5@latest
-go get github.com/tadvi/systray@latest
+go get github.com/godoes/systray@latest
+go get github.com/godoes/toast@latest
 go get golang.org/x/sys@latest
 
 echo 2. 整理模块依赖...
