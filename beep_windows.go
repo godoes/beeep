@@ -31,9 +31,11 @@ func Beep(freq float64, duration int) error {
 	kernel32, _ := syscall.LoadLibrary("kernel32.dll")
 	beep32, _ := syscall.GetProcAddress(kernel32, "Beep")
 
-	defer syscall.FreeLibrary(kernel32)
+	defer func(handle syscall.Handle) {
+		_ = syscall.FreeLibrary(handle)
+	}(kernel32)
 
-	_, _, e := syscall.Syscall(uintptr(beep32), uintptr(2), uintptr(int(freq)), uintptr(duration), 0)
+	_, _, e := syscall.SyscallN(beep32, uintptr(2), uintptr(int(freq)), uintptr(duration), 0)
 	if e != 0 {
 		return e
 	}

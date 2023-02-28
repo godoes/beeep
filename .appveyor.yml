@@ -2,17 +2,17 @@ version: "{build}"
 
 clone_depth: 1
 
-clone_folder: c:\gopath\src\github.com\gen2brain\beeep
+clone_folder: E:\Workspace\GitHub\godoes\beeep
 
 environment:
-  GOPATH: c:\gopath
+  GOPATH: E:\Workspace\Go
 
 install:
   - echo %GOPATH%
-  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - set PATH=%GOPATH%\bin;D:\Dev\Go\SDK\go\bin;%PATH%
   - go version
   - go env
-  - go get -u github.com/gen2brain/beeep
+  - go get -u github.com/godoes/beeep
 
 build_script:
   - go get -t ./...
