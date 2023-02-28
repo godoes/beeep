@@ -1,13 +1,24 @@
 package beeep
 
-func ExampleBeep() {
-	Beep(DefaultFreq, DefaultDuration)
+import "testing"
+
+func TestExampleBeep(t *testing.T) {
+	err := Beep(DefaultFreq, DefaultDuration)
+	if err != nil {
+		t.Error(err)
+	}
 }
 
-func ExampleNotify() {
-	Notify("Title", "MessageBody", "assets/information.png")
+func TestExampleNotify(t *testing.T) {
+	err := Notify("Title", "MessageBody", "assets/information.png")
+	if err != nil {
+		t.Error(err)
+	}
 }
 
-func ExampleAlert() {
-	Alert("Title", "MessageBody", "assets/warning.png")
+func TestExampleAlert(t *testing.T) {
+	err := Alert("Title", "MessageBody", "assets/warning.png")
+	if err != nil {
+		t.Error(err)
+	}
 }

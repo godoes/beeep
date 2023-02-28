@@ -12,7 +12,7 @@ import (
 	"syscall"
 	"time"
 
-	toast "github.com/go-toast/toast"
+	"github.com/go-toast/toast"
 	"github.com/tadvi/systray"
 	"golang.org/x/sys/windows/registry"
 )
@@ -25,14 +25,16 @@ func init() {
 	if err != nil {
 		return
 	}
-	defer k.Close()
+	defer func(k registry.Key) {
+		_ = k.Close()
+	}(k)
 
 	maj, _, err := k.GetIntegerValue("CurrentMajorVersionNumber")
 	if err != nil {
 		return
 	}
 
-	isWindows10 = maj == 10
+	isWindows10 = maj >= 10
 
 	if isWindows10 {
 		applicationID = appID()
@@ -79,9 +81,9 @@ func baloonNotify(title, message, appIcon string, bigIcon bool) error {
 	}
 
 	go func() {
-		tray.Run()
+		_ = tray.Run()
 		time.Sleep(3 * time.Second)
-		tray.Stop()
+		_ = tray.Stop()
 	}()
 
 	return tray.ShowMessage(title, message, bigIcon)
