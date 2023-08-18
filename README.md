@@ -1,9 +1,7 @@
 ## beeep
-[![TravisCI Build Status](https://travis-ci.org/gen2brain/beeep.svg?branch=master)](https://travis-ci.org/gen2brain/beeep) 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/4u7avrhsdxua2c9b?svg=true)](https://ci.appveyor.com/project/gen2brain/beeep)
-[![GoDoc](https://godoc.org/github.com/godoes/beeep?status.svg)](https://godoc.org/github.com/godoes/beeep) 
+[![Build Status](https://github.com/godoes/beeep/actions/workflows/build.yml/badge.svg)](https://github.com/godoes/beeep/actions)
+[![Go Reference](https://pkg.go.dev/badge/github.com/godoes/beeep.svg)](https://pkg.go.dev/github.com/godoes/beeep)
 [![Go Report Card](https://goreportcard.com/badge/github.com/godoes/beeep?branch=master)](https://goreportcard.com/report/github.com/godoes/beeep) 
-<!--[![Go Cover](http://gocover.io/_badge/github.com/godoes/beeep)](http://gocover.io/github.com/godoes/beeep)-->
 
 `beeep` provides a cross-platform library for sending desktop notifications, alerts and beeps.
 
@@ -37,8 +35,3 @@ if err != nil {
     panic(err)
 }
 ```
-
-
-## More
-
-For cross-platform dialogs and input boxes see [dlgs](https://github.com/gen2brain/dlgs).
